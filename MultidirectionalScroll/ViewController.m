@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "CustomView.h"
-@interface ViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface ViewController ()
 
 
 @property (nonatomic,strong)CustomView *customView;
