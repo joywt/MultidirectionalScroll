@@ -64,6 +64,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Hello" forIndexPath:indexPath];
     [cell setBackgroundColor:[UIColor clearColor]];
     [cell.textLabel setText:[NSString stringWithFormat:@"Row %ld",(long)indexPath.row]];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
 }
 
@@ -77,7 +78,7 @@
         self.currentIndex = index;
         UITableView *view = self.scrollViewSource[index];
         CGFloat topViewY = self.topView.frame.origin.y;
-        if (-topViewY <=200){
+        if (-topViewY < 200 ||(-topViewY==200&&view.contentOffset.y <= 200)){
              [view setContentOffset:CGPointMake(0, -topViewY) animated:NO];
         }
        
@@ -85,8 +86,8 @@
     
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    float y = scrollView.contentOffset.y;
-    if (y>0) {
+    if ([scrollView isKindOfClass:[UITableView class]]) {
+        float y = scrollView.contentOffset.y;
         if (y>200) {
             y = 200;
         }
@@ -94,8 +95,8 @@
     }
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    float y = scrollView.contentOffset.y;
-    if (y>0) {
+    if ([scrollView isKindOfClass:[UITableView class]]) {
+        float y = scrollView.contentOffset.y;
         if (y>200) {
             y = 200;
         }
