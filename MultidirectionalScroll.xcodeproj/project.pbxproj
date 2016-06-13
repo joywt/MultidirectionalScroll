@@ -16,6 +16,8 @@
 		0156CA061C8BCC0F00B97E67 /* MultidirectionalScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0156CA051C8BCC0F00B97E67 /* MultidirectionalScrollTests.m */; };
 		0156CA111C8BCC0F00B97E67 /* MultidirectionalScrollUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0156CA101C8BCC0F00B97E67 /* MultidirectionalScrollUITests.m */; };
 		0156CA201C8C066C00B97E67 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0156CA1F1C8C066C00B97E67 /* CustomView.m */; };
+		01F2F5211D0E611800AE1048 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F2F51F1D0E611800AE1048 /* Fabric.framework */; };
+		01F2F5221D0E611900AE1048 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F2F5201D0E611800AE1048 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		0156CA121C8BCC0F00B97E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0156CA1E1C8C066C00B97E67 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		0156CA1F1C8C066C00B97E67 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		01F2F51F1D0E611800AE1048 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = ../Fabric.framework; sourceTree = "<group>"; };
+		01F2F5201D0E611800AE1048 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = ../Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F2F5221D0E611900AE1048 /* Crashlytics.framework in Frameworks */,
+				01F2F5211D0E611800AE1048 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +128,8 @@
 		0156C9EB1C8BCC0F00B97E67 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				01F2F51F1D0E611800AE1048 /* Fabric.framework */,
+				01F2F5201D0E611800AE1048 /* Crashlytics.framework */,
 				0156C9EC1C8BCC0F00B97E67 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -155,6 +163,7 @@
 				0156C9E41C8BCC0E00B97E67 /* Sources */,
 				0156C9E51C8BCC0E00B97E67 /* Frameworks */,
 				0156C9E61C8BCC0E00B97E67 /* Resources */,
+				01F2F51E1D0E60F200AE1048 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -270,6 +279,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01F2F51E1D0E60F200AE1048 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 0ee5d6a89f26d37cd8ee061bfb7a42e566392514 3de705b184c295d3ecf579f6ad6bdedfd063a0677de6001baf8f2d71a1c9c5cb";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0156C9E41C8BCC0E00B97E67 /* Sources */ = {
@@ -420,6 +445,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MultidirectionalScroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jk360.MultidirectionalScroll;
@@ -434,6 +463,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MultidirectionalScroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jk360.MultidirectionalScroll;

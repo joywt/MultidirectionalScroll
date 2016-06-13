@@ -7,7 +7,7 @@
 //
 
 #import "CustomView.h"
-
+#import <Crashlytics/Crashlytics.h>
 @interface CustomView () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UIScrollView *landscapeScrollView;
 @property (nonatomic,strong)NSMutableArray *scrollViewSource;
@@ -39,6 +39,10 @@
 
 #pragma mark - target action
 - (void)touchMe:(id)sender{
+    [[Crashlytics sharedInstance] crash];
+//    NSArray *array = @[];
+//    NSString *string = array[1];
+//    NSLog(@"string ...%@",string);
     NSLog(@"你点我了，谢谢！");
 }
 
@@ -68,6 +72,9 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"...cell 被点击了");
+}
 
 
 #pragma mark - UIScrollViewDelegate
